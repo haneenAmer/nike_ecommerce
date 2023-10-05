@@ -48,7 +48,7 @@ class _NavBarState extends State<NavBar> {
             )),
           ],
           backgroundColor: Colors.white,
-          activeColor: Color(0xffFFB301),
+          activeColor: const Color(0xffFFB301),
         ),
       ),
     );
