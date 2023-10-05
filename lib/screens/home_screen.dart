@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nike_ecommerce/constants/colors.dart';
+import 'package:nike_ecommerce/screens/details_screen.dart';
 import 'package:nike_ecommerce/widgets/widgts.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -256,47 +257,30 @@ class HomeScreen extends StatelessWidget {
                       height: 12,
                     ),
 
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'newes showes',
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          'see more',
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: AppColors.mainamber,
-                          ),
-                        ),
-                      ],
-                    ),
+                    titleAndSeeMoreHead('Newes Showes'),
                     const SizedBox(
-                      height: 6,
+                      height: 12,
                     ),
                     cateories(),
-
-                    ///-------------
-                    const Text(
-                      'Popular ',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
                     const SizedBox(
-                      height: 6,
+                      height: 12,
+                    ),
+                    titleAndSeeMoreHead('Popular'),
+                    const SizedBox(
+                      height: 12,
                     ),
                     cateories(),
-                    const Text(
-                      'best saller',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
                     const SizedBox(
-                      height: 6,
+                      height: 12,
+                    ),
+                    titleAndSeeMoreHead('Best saller'),
+                    const SizedBox(
+                      height: 12,
                     ),
                     cateories(),
+                    const SizedBox(
+                      height: 12,
+                    ),
                   ],
                 ),
               ),
