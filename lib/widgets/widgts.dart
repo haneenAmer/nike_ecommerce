@@ -4,6 +4,7 @@ import 'package:nike_ecommerce/constants/colors.dart';
 import 'package:nike_ecommerce/screens/details_screen.dart';
 import 'package:nike_ecommerce/screens/done_screen.dart';
 import 'package:nike_ecommerce/screens/home_screen.dart';
+import 'package:nike_ecommerce/screens/navbar.dart';
 
 /// remove blue light
 class MyBehavior extends ScrollBehavior {
@@ -200,8 +201,8 @@ Row header(context) {
         padding: const EdgeInsets.all(8.0),
         child: GestureDetector(
           onTap: () {
-            Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const HomeScreen()));
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => NavBar()));
           },
           child: Container(
             height: 50,
