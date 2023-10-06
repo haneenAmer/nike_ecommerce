@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:nike_ecommerce/constants/colors.dart';
 import 'package:nike_ecommerce/screens/details_screen.dart';
+import 'package:nike_ecommerce/screens/done_screen.dart';
 
 /// remove blue light
 class MyBehavior extends ScrollBehavior {
@@ -115,6 +117,130 @@ Row titleAndSeeMoreHead(String catgoriesNameHeads) {
           fontSize: 15,
           color: AppColors.mainamber,
         ),
+      ),
+    ],
+  );
+}
+
+Container buyingButton(context) {
+  return Container(
+    height: 70,
+    width: 400,
+    decoration: BoxDecoration(
+      gradient: const LinearGradient(
+        begin: Alignment.centerLeft,
+        end: Alignment.centerRight,
+        colors: [
+          Color(0xffEEEEEE),
+          Color.fromARGB(255, 203, 202, 202),
+        ],
+      ),
+      borderRadius: BorderRadius.circular(40),
+    ),
+    // color: Color.fromARGB(255, 201, 198, 198)),
+    child: Padding(
+      padding: const EdgeInsets.all(4.0),
+      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => DoneScreen()));
+          },
+          child: Container(
+            height: 60,
+            width: 60,
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: AppColors.mainamber,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 2,
+                    blurRadius: 7,
+                    offset: const Offset(0, 3),
+                  )
+                ]),
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: SvgPicture.asset(
+                'assets/play.svg',
+              ),
+            ),
+          ),
+        ),
+        Container(
+            height: 60,
+            width: 60,
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 2,
+                    blurRadius: 7,
+                    offset: const Offset(0, 3),
+                  )
+                ]),
+            child: const Icon(
+              Icons.shopping_bag,
+              color: AppColors.mainamber,
+            )),
+      ]),
+    ),
+  );
+}
+
+Row header() {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          height: 50,
+          width: 50,
+          decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.1),
+                  spreadRadius: 2,
+                  blurRadius: 7,
+                  offset: const Offset(0, 3),
+                )
+              ]),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 3),
+            child: SvgPicture.asset(
+              'assets/menu.svg',
+            ),
+          ),
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+            height: 50,
+            width: 50,
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.1),
+                    spreadRadius: 2,
+                    blurRadius: 7,
+                    offset: const Offset(0, 3),
+                  )
+                ]),
+            child: const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Image(
+                image: AssetImage('assets/didi.png'),
+              ),
+            )),
       ),
     ],
   );
