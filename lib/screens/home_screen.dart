@@ -23,56 +23,7 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            height: 50,
-                            width: 50,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.white,
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
-                                    spreadRadius: 2,
-                                    blurRadius: 7,
-                                    offset: const Offset(0, 3),
-                                  )
-                                ]),
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 4),
-                              child: SvgPicture.asset(
-                                'assets/menu.svg',
-                                // width: 60,
-                                // height: 60,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            height: 60,
-                            width: 60,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.white,
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
-                                    spreadRadius: 2,
-                                    blurRadius: 7,
-                                    offset: const Offset(0, 3),
-                                  )
-                                ]),
-                            child: const Icon(Icons.grid_view),
-                          ),
-                        ),
-                      ],
-                    ),
+                    header(),
 
                     //// search section
                     const SizedBox(
@@ -90,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                                   const BorderRadius.all(Radius.circular(12)),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.grey.withOpacity(0.5),
+                                  color: Colors.grey.withOpacity(0.1),
                                   spreadRadius: 2,
                                   blurRadius: 5,
                                   offset: const Offset(0, 3),
@@ -109,12 +60,12 @@ class HomeScreen extends StatelessWidget {
                           width: 50,
                           height: 50,
                           decoration: BoxDecoration(
-                              color: Color(0xffFFB301),
+                              color: const Color(0xffFFB301),
                               borderRadius:
                                   const BorderRadius.all(Radius.circular(12)),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.grey.withOpacity(0.5),
+                                  color: Colors.grey.withOpacity(0.1),
                                   spreadRadius: 2,
                                   blurRadius: 5,
                                   offset: const Offset(0, 3),
@@ -198,7 +149,7 @@ class HomeScreen extends StatelessWidget {
                               color: Colors.white,
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.grey.withOpacity(0.5),
+                                  color: Colors.grey.withOpacity(0.1),
                                   spreadRadius: 2,
                                   blurRadius: 7,
                                   offset: const Offset(0, 3),
@@ -217,7 +168,7 @@ class HomeScreen extends StatelessWidget {
                               color: Colors.black,
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.grey.withOpacity(0.5),
+                                  color: Colors.grey.withOpacity(0.1),
                                   spreadRadius: 2,
                                   blurRadius: 7,
                                   offset: const Offset(0, 3),
@@ -236,7 +187,7 @@ class HomeScreen extends StatelessWidget {
                               color: Colors.white,
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.grey.withOpacity(0.5),
+                                  color: Colors.grey.withOpacity(0.1),
                                   spreadRadius: 2,
                                   blurRadius: 7,
                                   offset: const Offset(0, 3),
