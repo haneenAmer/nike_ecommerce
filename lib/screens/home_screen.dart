@@ -1,9 +1,7 @@
-import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:nike_ecommerce/constants/colors.dart';
-import 'package:nike_ecommerce/screens/details_screen.dart';
+
 import 'package:nike_ecommerce/widgets/widgts.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -23,7 +21,7 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    header(),
+                    header(context),
 
                     //// search section
                     const SizedBox(
