@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:nike_ecommerce/constants/colors.dart';
 import 'package:nike_ecommerce/widgets/widgts.dart';
 
@@ -18,7 +17,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
         child: Scaffold(
             body: Stack(children: [
       Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Padding(padding: const EdgeInsets.all(12.0), child: header()),
+        Padding(padding: const EdgeInsets.all(12.0), child: header(context)),
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 12.0),
           child: Column(
