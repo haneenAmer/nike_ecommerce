@@ -1,78 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nike_ecommerce/constants/colors.dart';
+import 'package:nike_ecommerce/widgets/widgts.dart';
 
-class DetailsScreen extends StatelessWidget {
+class DetailsScreen extends StatefulWidget {
   const DetailsScreen({super.key});
 
   @override
+  State<DetailsScreen> createState() => _DetailsScreenState();
+}
+
+class _DetailsScreenState extends State<DetailsScreen> {
+  int selectedSize = 0;
+  @override
   Widget build(BuildContext context) {
-    Color containerColor1 = Colors.grey;
-    Color containerColor2 = Colors.grey;
-    Color containerColor3 = Colors.grey;
-    Color containerColor4 = Colors.grey;
     return SafeArea(
         child: Scaffold(
             body: Stack(children: [
       Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 2,
-                          blurRadius: 7,
-                          offset: const Offset(0, 3),
-                        )
-                      ]),
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 4),
-                    child: SvgPicture.asset(
-                      'assets/menu.svg',
-                      // width: 60,
-                      // height: 60,
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: 60,
-                  width: 60,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 2,
-                          blurRadius: 7,
-                          offset: const Offset(0, 3),
-                        )
-                      ]),
-                  child: const Icon(Icons.grid_view),
-                ),
-              ),
-            ],
-          ),
-        ),
-        const SizedBox(
-          height: 12,
-        ),
+        Padding(padding: const EdgeInsets.all(12.0), child: header()),
         const Padding(
-          padding: EdgeInsets.all(12.0),
+          padding: EdgeInsets.symmetric(horizontal: 12.0),
           child: Column(
             children: [
               Text(
@@ -101,14 +49,14 @@ class DetailsScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 30,
+          height: 40,
         ),
         Padding(
-          padding: EdgeInsets.all(12.0),
+          padding: const EdgeInsets.all(12.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
+              const Row(
                 children: [
                   Text(
                     'Material :',
@@ -120,41 +68,127 @@ class DetailsScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 12,
               ),
-              Text(
+              const Text(
                 'Coloe shown: White/Total Orange/Purple',
                 style: TextStyle(fontSize: 16, color: Colors.grey),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
               Row(
+                //mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(top: 8.0),
+                    child: Text(
+                      'Size',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 12,
+                  ),
+                  Row(
+                    children: [
+                      for (int size in [36, 38, 39, 40])
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                selectedSize = size;
+                              });
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                color: (size == selectedSize)
+                                    ? Colors.amber
+                                    : const Color.fromARGB(255, 225, 217, 217),
+                              ),
+                              margin: const EdgeInsets.only(top: 10),
+                              width: 40,
+                              height: 40,
+                              child: Center(
+                                child: Text(
+                                  size.toString(),
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: (size == selectedSize)
+                                        ? Colors.white
+                                        : Colors.black,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                    ],
+                  )
+                ],
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Size',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    'Free delivery with your Nike Membership ',
+                    style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      setSta containerColor1 = Colors.amber;
-                    },
-                    child: Container(
-                      width: 36,
-                      height: 36,
-                      color: containerColor1,
-                      child: Center(child: Text('36')),
-                    ),
+                  SizedBox(
+                    height: 4,
+                  ),
+                  Text(
+                    'Nike Membership',
+                    style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
+              //     Container(
+              //       height: 55,
+              //       width: 180,
+              //       decoration: BoxDecoration(
+              //         borderRadius: BorderRadius.circular(10),
+              //         color: Colors.black,
+              //       ),
+              //       child: const Padding(
+              //         padding: EdgeInsets.all(15.0),
+              //         child: Row(
+              //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //           children: [
+              //             Padding(
+              //               padding: EdgeInsets.all(5.0),
+              //               child: Image(image: AssetImage('assets/nike.png')),
+              //             ),
+              //             Text(
+              //               'Membrshep',
+              //               style: TextStyle(color: Colors.white),
+              //             ),
+              //           ],
+              //         ),
+              //       ),
+              //     ),
+              //   ],
+              // ),
             ],
           ),
         ),
       ]),
+      Container(
+          margin: EdgeInsets.all(5),
+          alignment: Alignment.bottomCenter,
+          child: buyingButton(context)),
       const Positioned(
-        bottom: 200,
+        bottom: 230,
         left: 20,
         child: Image(
             image: AssetImage(
