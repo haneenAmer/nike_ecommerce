@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:nike_ecommerce/widgets/widgts.dart';
 
 class DoneScreen extends StatefulWidget {
@@ -15,7 +16,16 @@ class _DoneScreenState extends State<DoneScreen> {
       child: Scaffold(
         body: Column(
           children: [
-            header(),
+            header(context),
+            Center(
+              child: Lottie.asset('assets/Animation.json'),
+            ),
+            const Center(
+              child: Text(
+                'Order has been placed',
+                style: TextStyle(fontSize: 17),
+              ),
+            )
           ],
         ),
       ),
