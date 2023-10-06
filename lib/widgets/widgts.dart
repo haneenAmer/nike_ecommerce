@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:nike_ecommerce/constants/colors.dart';
 import 'package:nike_ecommerce/screens/details_screen.dart';
 import 'package:nike_ecommerce/screens/done_screen.dart';
+import 'package:nike_ecommerce/screens/home_screen.dart';
 
 /// remove blue light
 class MyBehavior extends ScrollBehavior {
@@ -191,30 +192,36 @@ Container buyingButton(context) {
   );
 }
 
-Row header() {
+Row header(context) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
       Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Container(
-          height: 50,
-          width: 50,
-          decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.1),
-                  spreadRadius: 2,
-                  blurRadius: 7,
-                  offset: const Offset(0, 3),
-                )
-              ]),
-          child: Padding(
-            padding: const EdgeInsets.only(top: 3),
-            child: SvgPicture.asset(
-              'assets/menu.svg',
+        child: GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const HomeScreen()));
+          },
+          child: Container(
+            height: 50,
+            width: 50,
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.1),
+                    spreadRadius: 2,
+                    blurRadius: 7,
+                    offset: const Offset(0, 3),
+                  )
+                ]),
+            child: Padding(
+              padding: const EdgeInsets.only(top: 3),
+              child: SvgPicture.asset(
+                'assets/menu.svg',
+              ),
             ),
           ),
         ),
@@ -244,4 +251,51 @@ Row header() {
       ),
     ],
   );
+}
+
+Container signUpWith(String logoImage) {
+  return Container(
+    height: 50,
+    width: 90,
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.1),
+            spreadRadius: 2,
+            blurRadius: 7,
+            offset: const Offset(0, 3),
+          ),
+        ]),
+    child: Padding(
+      padding: const EdgeInsets.all(12),
+      child: SvgPicture.asset(
+        logoImage,
+      ),
+    ),
+  );
+}
+
+class HalfCirclePainter extends CustomPainter {
+  final Color color;
+
+  HalfCirclePainter(this.color);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    Paint paint = Paint()..color = color;
+    canvas.drawArc(
+      Rect.fromLTWH(0, 0, size.width, size.height),
+      0,
+      3.14, // This value represents half of the circle in radians (180 degrees)
+      true,
+      paint,
+    );
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return false;
+  }
 }
