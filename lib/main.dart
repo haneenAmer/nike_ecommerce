@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:nike_ecommerce/screens/login_screen.dart';
 import 'package:nike_ecommerce/screens/navbar.dart';
+import 'package:nike_ecommerce/screens/signin.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: LoginScreen());
+    return const MaterialApp(debugShowCheckedModeBanner: false, home: Signin());
   }
 }
