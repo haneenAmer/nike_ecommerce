@@ -83,6 +83,9 @@ class _LoginState extends State<LoginScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      SizedBox(
+                        height: 12,
+                      ),
                       Text(
                         'Nike',
                         style: TextStyle(
