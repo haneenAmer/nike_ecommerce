@@ -290,7 +290,7 @@ class _LoginState extends State<LoginScreen> {
                     HalfCirclePainter(AppColors.mainamber.withOpacity(0.5)),
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(20.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

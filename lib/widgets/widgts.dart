@@ -3,8 +3,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:nike_ecommerce/constants/colors.dart';
 import 'package:nike_ecommerce/screens/details_screen.dart';
 import 'package:nike_ecommerce/screens/done_screen.dart';
-import 'package:nike_ecommerce/screens/home_screen.dart';
 import 'package:nike_ecommerce/screens/navbar.dart';
+import 'package:nike_ecommerce/screens/signin.dart';
+import 'package:nike_ecommerce/screens/transformation.dart';
 
 /// remove blue light
 class MyBehavior extends ScrollBehavior {
@@ -299,4 +300,56 @@ class HalfCirclePainter extends CustomPainter {
   bool shouldRepaint(CustomPainter oldDelegate) {
     return false;
   }
+}
+
+Container buyingButtonWihOtShoppingIcon(context) {
+  return Container(
+    height: 70,
+    width: 400,
+    decoration: BoxDecoration(
+      gradient: const LinearGradient(
+        begin: Alignment.centerLeft,
+        end: Alignment.centerRight,
+        colors: [
+          Color(0xffEEEEEE),
+          Color.fromARGB(255, 203, 202, 202),
+        ],
+      ),
+      borderRadius: BorderRadius.circular(40),
+    ),
+    // color: Color.fromARGB(255, 201, 198, 198)),
+    child: Padding(
+      padding: const EdgeInsets.all(4.0),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const OnBoarding()));
+        },
+        child:
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+          Container(
+            height: 60,
+            width: 60,
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: AppColors.mainamber,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 2,
+                    blurRadius: 7,
+                    offset: const Offset(0, 3),
+                  )
+                ]),
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: SvgPicture.asset(
+                'assets/play.svg',
+              ),
+            ),
+          ),
+        ]),
+      ),
+    ),
+  );
 }

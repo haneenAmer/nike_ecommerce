@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:nike_ecommerce/screens/transformation.dart';
 
 import 'package:nike_ecommerce/widgets/widgts.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -139,23 +145,32 @@ class HomeScreen extends StatelessWidget {
                           width: 30,
                           height: 30,
                         ),
-                        Container(
-                          height: 40,
-                          width: 40,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.1),
-                                  spreadRadius: 2,
-                                  blurRadius: 7,
-                                  offset: const Offset(0, 3),
-                                )
-                              ]),
-                          child: const Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Image(image: AssetImage('assets/puma.png')),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => OnBoarding()));
+                          },
+                          child: Container(
+                            height: 40,
+                            width: 40,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.white,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.1),
+                                    spreadRadius: 2,
+                                    blurRadius: 7,
+                                    offset: const Offset(0, 3),
+                                  )
+                                ]),
+                            child: const Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child:
+                                  Image(image: AssetImage('assets/puma.png')),
+                            ),
                           ),
                         ),
                         Container(
