@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nike_ecommerce/constants/colors.dart';
 import 'package:nike_ecommerce/screens/navbar.dart';
+import 'package:nike_ecommerce/screens/sign_in_wih_google/sign_up.dart';
 import 'package:nike_ecommerce/widgets/widgts.dart';
 
 class Signin extends StatefulWidget {
@@ -234,7 +235,9 @@ class _SigninState extends State<Signin> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      signUpWith('assets/google.svg'),
+                      GestureDetector(
+                          onTap: signIn,
+                          child: signUpWith('assets/google.svg')),
                       signUpWith('assets/facebook.svg'),
                       signUpWith('assets/apple.svg'),
                     ],
