@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:nike_ecommerce/screens/onboarding.dart';
 import 'package:nike_ecommerce/screens/transformation.dart';
 
 import 'package:nike_ecommerce/widgets/widgts.dart';
@@ -138,19 +139,19 @@ class _HomeScreenState extends State<HomeScreen> {
 
                     /// logos section
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        SvgPicture.asset(
-                          'assets/vector.svg',
-                          width: 30,
-                          height: 30,
-                        ),
+                        // SvgPicture.asset(
+                        //   'assets/vector.svg',
+                        //   width: 30,
+                        //   height: 30,
+                        // ),
                         GestureDetector(
                           onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => OnBoarding()));
+                                    builder: (context) => const OnBoarding()));
                           },
                           child: Container(
                             height: 40,
@@ -209,11 +210,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: const Image(
                               image: AssetImage('assets/addidas.png')),
                         ),
-                        SvgPicture.asset(
-                          'assets/vector.svg',
-                          width: 30,
-                          height: 30,
-                        ),
+                        // SvgPicture.asset(
+                        //   'assets/vector.svg',
+                        //   width: 30,
+                        //   height: 30,
+                        // ),
                       ],
                     ),
                     // Categories
