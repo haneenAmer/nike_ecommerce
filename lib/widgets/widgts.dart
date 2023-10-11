@@ -4,6 +4,7 @@ import 'package:nike_ecommerce/constants/colors.dart';
 import 'package:nike_ecommerce/screens/details_screen.dart';
 import 'package:nike_ecommerce/screens/done_screen.dart';
 import 'package:nike_ecommerce/screens/navbar.dart';
+import 'package:nike_ecommerce/screens/onboarding.dart';
 import 'package:nike_ecommerce/screens/signin.dart';
 import 'package:nike_ecommerce/screens/transformation.dart';
 
@@ -322,29 +323,35 @@ Container buyingButtonWihOtShoppingIcon(context) {
       padding: const EdgeInsets.all(4.0),
       child: GestureDetector(
         onTap: () {
-          Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => const OnBoarding()));
+          //print('please work');
+          // Navigator.of(context).push(
+          //     MaterialPageRoute(builder: (context) => const OnBoarding()));
         },
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          Container(
-            height: 60,
-            width: 60,
-            decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: AppColors.mainamber,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 2,
-                    blurRadius: 7,
-                    offset: const Offset(0, 3),
-                  )
-                ]),
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: SvgPicture.asset(
-                'assets/play.svg',
+          GestureDetector(
+            onTap: () {
+              print('please work');
+            },
+            child: Container(
+              height: 60,
+              width: 60,
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: AppColors.mainamber,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 2,
+                      blurRadius: 7,
+                      offset: const Offset(0, 3),
+                    )
+                  ]),
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: SvgPicture.asset(
+                  'assets/play.svg',
+                ),
               ),
             ),
           ),
