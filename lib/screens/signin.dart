@@ -235,8 +235,12 @@ class _SigninState extends State<Signin> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      GestureDetector(
-                          onTap: signIn,
+                      TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                    builder: (context) => Signin()));
+                          },
                           child: signUpWith('assets/google.svg')),
                       signUpWith('assets/facebook.svg'),
                       signUpWith('assets/apple.svg'),
