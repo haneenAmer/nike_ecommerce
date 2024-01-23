@@ -18,35 +18,33 @@ class _NavBarState extends State<NavBar> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: const Center(
-          child: HomeScreen(),
-          // child: _widgetOptions.elementAt(_selectedIndex),
-        ),
-        bottomNavigationBar: ConvexAppBar(
-          items: const [
-            TabItem(
-              icon: Icons.home,
-              title: 'Home',
-            ),
-            TabItem(
-              icon: Icons.search,
-              title: 'search',
-            ),
-            TabItem(
-              icon: Icons.favorite,
-              title: 'favorite',
-            ),
-            TabItem(
-              icon: Icons.person,
-              title: 'person',
-            )
-          ],
-          backgroundColor: Colors.white,
-          activeColor: const Color(0xffFFB301),
-          color: Colors.grey,
-        ),
+    return Scaffold(
+      body: const Center(
+        child: HomeScreen(),
+        // child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      bottomNavigationBar: ConvexAppBar(
+        items: const [
+          TabItem(
+            icon: Icons.home,
+            title: 'Home',
+          ),
+          TabItem(
+            icon: Icons.search,
+            title: 'search',
+          ),
+          TabItem(
+            icon: Icons.favorite,
+            title: 'favorite',
+          ),
+          TabItem(
+            icon: Icons.person,
+            title: 'person',
+          )
+        ],
+        backgroundColor: Colors.white,
+        activeColor: const Color(0xffFFB301),
+        color: Colors.grey,
       ),
     );
   }
