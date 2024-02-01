@@ -4,9 +4,6 @@ import 'package:nike_ecommerce/constants/colors.dart';
 import 'package:nike_ecommerce/screens/details_screen.dart';
 import 'package:nike_ecommerce/screens/done_screen.dart';
 import 'package:nike_ecommerce/screens/navbar.dart';
-import 'package:nike_ecommerce/screens/onboarding.dart';
-import 'package:nike_ecommerce/screens/signin.dart';
-import 'package:nike_ecommerce/screens/transformation.dart';
 
 /// remove blue light
 class MyBehavior extends ScrollBehavior {
@@ -19,7 +16,7 @@ class MyBehavior extends ScrollBehavior {
 
 SizedBox cateories() {
   return SizedBox(
-      height: 150,
+      height: 200,
       width: double.infinity,
       child: ScrollConfiguration(
         behavior: MyBehavior(),
@@ -37,7 +34,7 @@ SizedBox cateories() {
                     },
                     child: Container(
                       margin: const EdgeInsets.all(5),
-                      height: 100,
+                      height: 150,
                       width: 250,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
@@ -57,20 +54,26 @@ SizedBox cateories() {
                               padding: const EdgeInsets.all(4.0),
                               child: Column(
                                 children: [
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
                                   const Text(
                                     'NIKE',
                                     style: TextStyle(
                                         fontSize: 22,
                                         fontWeight: FontWeight.bold),
                                   ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
                                   const Text('Air max 1 '),
                                   addToCardButton()
                                 ],
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: const Image(
+                            const Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Image(
                                   image: AssetImage('assets/blueshoe.png')),
                             )
                           ]),
