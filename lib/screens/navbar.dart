@@ -14,7 +14,6 @@ class _NavBarState extends State<NavBar> {
   //   const HomeScreen(),
   //   const SearchScreen(),
   //   const HomeScreen(),
-  // ];
 
   @override
   Widget build(BuildContext context) {
