@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nike_ecommerce/constants/colors.dart';
 import 'package:nike_ecommerce/screens/navbar.dart';
-import 'package:nike_ecommerce/screens/sign_in_wih_google/sign_up.dart';
 import 'package:nike_ecommerce/widgets/widgts.dart';
 
 class Signin extends StatefulWidget {
@@ -23,7 +22,7 @@ class _SigninState extends State<Signin> {
       body: SingleChildScrollView(
         child: Stack(children: [
           Positioned(
-            bottom: 500,
+            bottom: 550,
             child: CustomPaint(
               size: const Size(400, 250),
               painter: HalfCirclePainter(
@@ -31,7 +30,7 @@ class _SigninState extends State<Signin> {
             ),
           ),
           Positioned(
-            bottom: 500,
+            bottom: 550,
             left: 200,
             child: CustomPaint(
               size: const Size(300, 300),
@@ -53,7 +52,9 @@ class _SigninState extends State<Signin> {
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 18),
                         ),
-                        Icon(Icons.person_2_outlined)
+                        Icon(
+                          Icons.person_2_outlined,
+                        )
                       ],
                     ),
                     Text('Welcom Back Haneen Amer')
@@ -117,6 +118,7 @@ class _SigninState extends State<Signin> {
                                         labelText: 'user name',
                                         prefixIcon: Icon(
                                           Icons.person,
+                                          color: Colors.grey,
                                         ),
                                         errorStyle: TextStyle(fontSize: 16.0),
                                         border: OutlineInputBorder(
